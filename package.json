@@ -1,0 +1,136 @@
+{
+  "name": "react-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --passWithNoTests",
+    "eject": "react-scripts eject",
+    "prepare": "husky install",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix",
+    "prettier": "prettier -c .",
+    "prettier:fix": "prettier -w .",
+    "stylelint": "stylelint \"**/*.{scss, css}\"",
+    "stylelint:fix": "stylelint \"**/*.{scss, css}\" --fix",
+    "lint": "npm run eslint && npm run prettier",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^12.20.20",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "node-sass": "^6.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "styled-components": "^5.3.1",
+    "typescript": "^4.3.5",
+    "web-vitals": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.9",
+    "@types/styled-components": "^5.1.14",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
+    "babel-plugin-styled-components": "^1.13.2",
+    "enzyme": "^3.11.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-sonarjs": "^0.10.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:sonarjs/recommended"
+    ],
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "plugins": [
+      "simple-import-sort",
+      "import",
+      "sonarjs"
+    ],
+    "rules": {
+      "react/jsx-curly-brace-presence": [
+        1,
+        {
+          "props": "never",
+          "children": "never"
+        }
+      ],
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
+      "import/first": "error",
+      "import/newline-after-import": "error",
+      "import/no-duplicates": "error",
+      "no-debugger": "error",
+      "no-console": [
+        "error",
+        {
+          "allow": [
+            "warn",
+            "error"
+          ]
+        }
+      ],
+      "curly": [
+        "error"
+      ]
+    },
+    "overrides": [
+      {
+        "files": [
+          "src/**/*.ts",
+          "src/**/*.tsx",
+          "src/**/*.js",
+          "src/**/*.jsx"
+        ]
+      }
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none",
+    "printWidth": 100,
+    "arrowParens": "always"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-sass-guidelines"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "eslint --max-warnings 0 --fix"
+    ],
+    "*.{js,ts,tsx,jsx,scss,sass,css,md,json}": "prettier -w",
+    "*.{scss,sass,css}": "stylelint --fix"
+  }
+}
